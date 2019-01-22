@@ -8,7 +8,7 @@ const LaunchRequestHandler = {
     return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
   },
   handle(handlerInput) {
-    const speechText = 'Welcome to the world of Magic Numbers! Say Magic Number to see the magic of numbers!';
+    const speechText = 'Welcome to the world of Magic Numbers! Say Magic Number one or Magic Number two to see the magic of numbers!';
 
     return handlerInput.responseBuilder
       .speak(speechText)
@@ -18,26 +18,50 @@ const LaunchRequestHandler = {
   },
 };
 
-const MagicNumberIntentHandler = {
+const MagicNumberOneIntentHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentRequest'
-      && handlerInput.requestEnvelope.request.intent.name === 'MagicNumberIntent';
+      && handlerInput.requestEnvelope.request.intent.name === 'MagicNumberOneIntent';
   },
   handle(handlerInput) {
     const attributes = handlerInput.attributesManager.getSessionAttributes();
-    attributes.num = Math.floor(Math.random() * Math.floor(2));
-    let speechText = '';
-
-    if(!attributes.num){
-      speechText = 'Step 1. Think of a whole number 1 through 10., Step 2. Double it!, Step 3. Add 4., Step 4. Divide by 2., Step 5. Subtract the original number., When you are done, say Done.';
-    } else {
-      speechText = 'Step 1. Choose a number, any number!, Step 2. Multiply the number by 100., Step 3. Subtract the original number from the answer., Step 4. Add the digits in your answer., When you are done, say Done.'
-    }
+    attributes.num = 0;
+    const speechText = 'Step 1. Think of a whole number 1 through 10., Step 2. Double it!, Step 3. Add 4., Step 4. Divide by 2., Step 5. Subtract the original number., When you are done, say Done.';
 
     return handlerInput.responseBuilder
       .speak(speechText)
       .reprompt(speechText)
       .withSimpleCard('Hello World', speechText)
+      .addDirective({
+        type: 'Alexa.Presentation.APL.RenderDocument',
+        version: '1.0',
+        document: require('./resources/numberdisplay.json'),
+        datasources: require('./resources/magiconedata.json')
+      })
+      .getResponse();
+  },
+};
+
+const MagicNumberTwoIntentHandler = {
+  canHandle(handlerInput) {
+    return handlerInput.requestEnvelope.request.type === 'IntentRequest'
+      && handlerInput.requestEnvelope.request.intent.name === 'MagicNumberTwoIntent';
+  },
+  handle(handlerInput) {
+    const attributes = handlerInput.attributesManager.getSessionAttributes();
+    attributes.num = 1;
+    const speechText = 'Step 1. Choose a number, any number!, Step 2. Multiply the number by 100., Step 3. Subtract the original number from the answer., Step 4. Add the digits in your answer., When you are done, say Done.';
+
+    return handlerInput.responseBuilder
+      .speak(speechText)
+      .reprompt(speechText)
+      .withSimpleCard('Hello World', speechText)
+      .addDirective({
+        type: 'Alexa.Presentation.APL.RenderDocument',
+        version: '1.0',
+        document: require('./resources/numberdisplay.json'),
+        datasources: require('./resources/magictwodata.json')
+      })
       .getResponse();
   },
 };
@@ -156,7 +180,8 @@ const skillBuilder = Alexa.SkillBuilders.custom();
 exports.handler = skillBuilder
   .addRequestHandlers(
     LaunchRequestHandler,
-    MagicNumberIntentHandler,
+    MagicNumberOneIntentHandler,
+    MagicNumberTwoIntentHandler,
     DoneIntentHandler,
     YesIntentHandler,
     NoIntentHandler,

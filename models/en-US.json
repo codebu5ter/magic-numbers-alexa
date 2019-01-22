@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "magic to me",
+      "invocationName": "magic numbers",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
@@ -16,11 +16,19 @@
           "samples": []
         },
         {
-          "name": "MagicNumberIntent",
+          "name": "MagicNumberOneIntent",
           "slots": [],
           "samples": [
-            "magic number",
-            "magic numbers"
+            "magic number one",
+            "magic numbers one"
+          ]
+        },
+        {
+          "name": "MagicNumberTwoIntent",
+          "slots": [],
+          "samples": [
+            "magic number two",
+            "magic numbers two"
           ]
         },
         {

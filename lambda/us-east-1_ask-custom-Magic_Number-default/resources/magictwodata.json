@@ -1,0 +1,51 @@
+{
+    "bodyTemplate1Data": {
+        "type": "object",
+        "objectId": "bt1Sample",
+        "backgroundImage": {
+            "contentDescription": null,
+            "smallSourceUrl": null,
+            "largeSourceUrl": null,
+            "sources": [
+                {
+                    "url": "https://s3.amazonaws.com/magic-numbers/blank-blue-background-concept-1314540.jpg",
+                    "size": "small",
+                    "widthPixels": 0,
+                    "heightPixels": 0
+                },
+                {
+                    "url": "https://s3.amazonaws.com/magic-numbers/blank-blue-background-concept-1314540.jpg",
+                    "size": "large",
+                    "widthPixels": 0,
+                    "heightPixels": 0
+                }
+            ]
+        },
+        "title": "Magic Numbers",
+        "textContent": {
+            "primaryText": {
+                "type": "PlainText",
+                "text": [
+                    {
+                        "text": "Step 1. Choose a number, any number!"
+                    },
+                    {
+                        "text": "Step 2. Multiply the number by 100."
+                    },
+                    {
+                        "text": "Step 3. Subtract the original number from the answer."
+                    },
+                    {
+                        "text": "Step 4. Add the digits in your answer."
+                    },
+                    {
+                        "text": "Step 5. Subtract the original number."
+                    },
+                    {
+                        "text": "When you are done, say Done."
+                    }
+                ]
+            }
+        }
+    }
+}

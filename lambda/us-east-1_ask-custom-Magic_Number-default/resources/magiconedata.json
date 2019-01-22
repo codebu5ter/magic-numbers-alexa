@@ -1,0 +1,51 @@
+{
+    "bodyTemplate1Data": {
+        "type": "object",
+        "objectId": "bt1Sample",
+        "backgroundImage": {
+            "contentDescription": null,
+            "smallSourceUrl": null,
+            "largeSourceUrl": null,
+            "sources": [
+                {
+                    "url": "https://s3.amazonaws.com/magic-numbers/blank-blue-background-concept-1314540.jpg",
+                    "size": "small",
+                    "widthPixels": 0,
+                    "heightPixels": 0
+                },
+                {
+                    "url": "https://s3.amazonaws.com/magic-numbers/blank-blue-background-concept-1314540.jpg",
+                    "size": "large",
+                    "widthPixels": 0,
+                    "heightPixels": 0
+                }
+            ]
+        },
+        "title": "Magic Numbers",
+        "textContent": {
+            "primaryText": {
+                "type": "PlainText",
+                "text": [
+                    {
+                        "text": "Step 1. Think of a whole number 1 through 10."
+                    },
+                    {
+                        "text": "Step 2. Double it!"
+                    },
+                    {
+                        "text": "Step 3. Add 4."
+                    },
+                    {
+                        "text": "Step 4. Divide by 2."
+                    },
+                    {
+                        "text": "Step 5. Subtract the original number."
+                    },
+                    {
+                        "text": "When you are done, say Done."
+                    }
+                ]
+            }
+        }
+    }
+}
