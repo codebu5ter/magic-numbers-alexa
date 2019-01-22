@@ -14,6 +14,43 @@ const LaunchRequestHandler = {
       .speak(speechText)
       .reprompt(speechText)
       .withSimpleCard('Hello World', speechText)
+      .addDirective({
+        type: 'Alexa.Presentation.APL.RenderDocument',
+        version: '1.0',
+        document: require('./resources/yesnohelpdisplay.json'),
+        datasources: {
+          "bodyTemplate1Data": {
+            "type": "object",
+            "objectId": "bt1Sample",
+            "backgroundImage": {
+                "contentDescription": null,
+                "smallSourceUrl": null,
+                "largeSourceUrl": null,
+                "sources": [
+                    {
+                        "url": "https://s3.amazonaws.com/magic-numbers/arts-arts-and-crafts-concept-1314543.jpg",
+                        "size": "small",
+                        "widthPixels": 0,
+                        "heightPixels": 0
+                    },
+                    {
+                        "url": "https://s3.amazonaws.com/magic-numbers/arts-arts-and-crafts-concept-1314543.jpg",
+                        "size": "large",
+                        "widthPixels": 0,
+                        "heightPixels": 0
+                    }
+                ]
+            },
+            "title": "Magic Numbers",
+            "textContent": {
+                "primaryText": {
+                    "type": "PlainText",
+                    "text": speechText
+                }
+            }
+          }
+        }
+      })
       .getResponse();
   },
 };
@@ -84,6 +121,43 @@ const DoneIntentHandler = {
       .speak(speechText)
       .reprompt(speechText)
       .withSimpleCard('Hello World', speechText)
+      .addDirective({
+        type: 'Alexa.Presentation.APL.RenderDocument',
+        version: '1.0',
+        document: require('./resources/yesnohelpdisplay.json'),
+        datasources: {
+          "bodyTemplate1Data": {
+            "type": "object",
+            "objectId": "bt1Sample",
+            "backgroundImage": {
+                "contentDescription": null,
+                "smallSourceUrl": null,
+                "largeSourceUrl": null,
+                "sources": [
+                    {
+                        "url": "https://s3.amazonaws.com/magic-numbers/count-counting-graphic-1329296.jpg",
+                        "size": "small",
+                        "widthPixels": 0,
+                        "heightPixels": 0
+                    },
+                    {
+                        "url": "https://s3.amazonaws.com/magic-numbers/count-counting-graphic-1329296.jpg",
+                        "size": "large",
+                        "widthPixels": 0,
+                        "heightPixels": 0
+                    }
+                ]
+            },
+            "title": "Magic Numbers",
+            "textContent": {
+                "primaryText": {
+                    "type": "PlainText",
+                    "text": speechText
+                }
+            }
+          }
+        }
+      })
       .getResponse();
   },
 };
@@ -94,12 +168,49 @@ const HelpIntentHandler = {
       && handlerInput.requestEnvelope.request.intent.name === 'AMAZON.HelpIntent';
   },
   handle(handlerInput) {
-    const speechText = 'You can say hello to me!';
+    const speechText = 'You can say magic number one or magic number two to see the magic of numbers.';
 
     return handlerInput.responseBuilder
       .speak(speechText)
       .reprompt(speechText)
       .withSimpleCard('Hello World', speechText)
+      .addDirective({
+        type: 'Alexa.Presentation.APL.RenderDocument',
+        version: '1.0',
+        document: require('./resources/yesnohelpdisplay.json'),
+        datasources: {
+          "bodyTemplate1Data": {
+            "type": "object",
+            "objectId": "bt1Sample",
+            "backgroundImage": {
+                "contentDescription": null,
+                "smallSourceUrl": null,
+                "largeSourceUrl": null,
+                "sources": [
+                    {
+                        "url": "https://s3.amazonaws.com/magic-numbers/pay-2662758_1920.jpg",
+                        "size": "small",
+                        "widthPixels": 0,
+                        "heightPixels": 0
+                    },
+                    {
+                        "url": "https://s3.amazonaws.com/magic-numbers/pay-2662758_1920.jpg",
+                        "size": "large",
+                        "widthPixels": 0,
+                        "heightPixels": 0
+                    }
+                ]
+            },
+            "title": "Magic Numbers",
+            "textContent": {
+                "primaryText": {
+                    "type": "PlainText",
+                    "text": speechText
+                }
+            }
+          }
+        }
+      })
       .getResponse();
   },
 };
@@ -116,6 +227,43 @@ const CancelAndStopIntentHandler = {
     return handlerInput.responseBuilder
       .speak(speechText)
       .withSimpleCard('Hello World', speechText)
+      .addDirective({
+        type: 'Alexa.Presentation.APL.RenderDocument',
+        version: '1.0',
+        document: require('./resources/yesnohelpdisplay.json'),
+        datasources: {
+          "bodyTemplate1Data": {
+            "type": "object",
+            "objectId": "bt1Sample",
+            "backgroundImage": {
+                "contentDescription": null,
+                "smallSourceUrl": null,
+                "largeSourceUrl": null,
+                "sources": [
+                    {
+                        "url": "https://s3.amazonaws.com/magic-numbers/pay-2662758_1920.jpg",
+                        "size": "small",
+                        "widthPixels": 0,
+                        "heightPixels": 0
+                    },
+                    {
+                        "url": "https://s3.amazonaws.com/magic-numbers/pay-2662758_1920.jpg",
+                        "size": "large",
+                        "widthPixels": 0,
+                        "heightPixels": 0
+                    }
+                ]
+            },
+            "title": "Magic Numbers",
+            "textContent": {
+                "primaryText": {
+                    "type": "PlainText",
+                    "text": speechText
+                }
+            }
+          }
+        }
+      })
       .getResponse();
   },
 };
@@ -131,6 +279,43 @@ const YesIntentHandler = {
     return handlerInput.responseBuilder
       .speak(speechText)
       .withSimpleCard('Hello World', speechText)
+      .addDirective({
+        type: 'Alexa.Presentation.APL.RenderDocument',
+        version: '1.0',
+        document: require('./resources/yesnohelpdisplay.json'),
+        datasources: {
+          "bodyTemplate1Data": {
+            "type": "object",
+            "objectId": "bt1Sample",
+            "backgroundImage": {
+                "contentDescription": null,
+                "smallSourceUrl": null,
+                "largeSourceUrl": null,
+                "sources": [
+                    {
+                        "url": "https://s3.amazonaws.com/magic-numbers/pay-2662758_1920.jpg",
+                        "size": "small",
+                        "widthPixels": 0,
+                        "heightPixels": 0
+                    },
+                    {
+                        "url": "https://s3.amazonaws.com/magic-numbers/pay-2662758_1920.jpg",
+                        "size": "large",
+                        "widthPixels": 0,
+                        "heightPixels": 0
+                    }
+                ]
+            },
+            "title": "Magic Numbers",
+            "textContent": {
+                "primaryText": {
+                    "type": "PlainText",
+                    "text": speechText
+                }
+            }
+          }
+        }
+      })
       .getResponse();
   },
 };
@@ -146,6 +331,43 @@ const NoIntentHandler = {
     return handlerInput.responseBuilder
       .speak(speechText)
       .withSimpleCard('Hello World', speechText)
+      .addDirective({
+        type: 'Alexa.Presentation.APL.RenderDocument',
+        version: '1.0',
+        document: require('./resources/yesnohelpdisplay.json'),
+        datasources: {
+          "bodyTemplate1Data": {
+            "type": "object",
+            "objectId": "bt1Sample",
+            "backgroundImage": {
+                "contentDescription": null,
+                "smallSourceUrl": null,
+                "largeSourceUrl": null,
+                "sources": [
+                    {
+                        "url": "https://s3.amazonaws.com/magic-numbers/pay-2662758_1920.jpg",
+                        "size": "small",
+                        "widthPixels": 0,
+                        "heightPixels": 0
+                    },
+                    {
+                        "url": "https://s3.amazonaws.com/magic-numbers/pay-2662758_1920.jpg",
+                        "size": "large",
+                        "widthPixels": 0,
+                        "heightPixels": 0
+                    }
+                ]
+            },
+            "title": "Magic Numbers",
+            "textContent": {
+                "primaryText": {
+                    "type": "PlainText",
+                    "text": speechText
+                }
+            }
+          }
+        }
+      })
       .getResponse();
   },
 };

@@ -23,7 +23,7 @@
             "codeUri": "lambda/us-east-1_ask-custom-Magic_Number-default",
             "functionName": "ask-custom-Magic_Number-default",
             "handler": "index.handler",
-            "revisionId": "e9dbd50e-ed22-4072-8331-0eb6d27fc226",
+            "revisionId": "bbb2a827-4f24-4a9f-a1db-d3bed0f1876f",
             "runtime": "nodejs8.10"
           }
         ]
