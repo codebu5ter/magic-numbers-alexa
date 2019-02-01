@@ -1,58 +1,58 @@
 {
   "interactionModel": {
-    "languageModel": {
-      "invocationName": "magic numbers",
-      "intents": [
-        {
-          "name": "AMAZON.CancelIntent",
-          "samples": []
-        },
-        {
-          "name": "AMAZON.HelpIntent",
-          "samples": []
-        },
-        {
-          "name": "AMAZON.StopIntent",
-          "samples": []
-        },
-        {
-          "name": "MagicNumberOneIntent",
-          "slots": [],
-          "samples": [
-            "magic number one",
-            "magic numbers one"
-          ]
-        },
-        {
-          "name": "MagicNumberTwoIntent",
-          "slots": [],
-          "samples": [
-            "magic number two",
-            "magic numbers two"
-          ]
-        },
-        {
-          "name": "DoneIntent",
-          "slots": [],
-          "samples": [
-            "done",
-            "i am done"
-          ]
-        },
-        {
-          "name": "AMAZON.NavigateHomeIntent",
-          "samples": []
-        },
-        {
-          "name": "AMAZON.YesIntent",
-          "samples": []
-        },
-        {
-          "name": "AMAZON.NoIntent",
-          "samples": []
-        }
-      ],
-      "types": []
-    }
+      "languageModel": {
+          "invocationName": "magic numbers",
+          "intents": [
+              {
+                  "name": "AMAZON.CancelIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.HelpIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.StopIntent",
+                  "samples": []
+              },
+              {
+                  "name": "MagicNumberOneIntent",
+                  "slots": [],
+                  "samples": [
+                      "magic number one",
+                      "magic numbers one"
+                  ]
+              },
+              {
+                  "name": "MagicNumberTwoIntent",
+                  "slots": [],
+                  "samples": [
+                      "magic number two",
+                      "magic numbers two"
+                  ]
+              },
+              {
+                  "name": "DoneIntent",
+                  "slots": [],
+                  "samples": [
+                      "done",
+                      "i am done"
+                  ]
+              },
+              {
+                  "name": "AMAZON.NavigateHomeIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.YesIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.NoIntent",
+                  "samples": []
+              }
+          ],
+          "types": []
+      }
   }
 }

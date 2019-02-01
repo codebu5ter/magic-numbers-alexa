@@ -157,6 +157,7 @@
                             {
                                 "type": "Text",
                                 "text": "${payload.bodyTemplate1Data.textContent.primaryText.text}",
+                                "paddingBottom": "15vw",
                                 "fontSize": "11vw",
                                 "spacing": "@spacingSmall",
                                 "style": "textStyleBody"

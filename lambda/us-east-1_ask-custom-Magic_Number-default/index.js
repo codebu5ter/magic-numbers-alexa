@@ -8,12 +8,20 @@ const LaunchRequestHandler = {
     return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
   },
   handle(handlerInput) {
-    const speechText = 'Welcome to the world of Magic Numbers! Say Magic Number one or Magic Number two to see the magic of numbers!';
+    const speechText = 'Welcome to the world of Magic Numbers! Say Magic Number One or Magic Number Two to see the magic of numbers!';
 
+    if (!supportsAPL(handlerInput)) {
+      return handlerInput.responseBuilder
+        .speak(speechText)
+        .reprompt(speechText)
+        .withSimpleCard('Magic Numbers', speechText)
+        .getResponse();
+    }
+    
     return handlerInput.responseBuilder
       .speak(speechText)
       .reprompt(speechText)
-      .withSimpleCard('Hello World', speechText)
+      .withSimpleCard('Magic Numbers', speechText)
       .addDirective({
         type: 'Alexa.Presentation.APL.RenderDocument',
         version: '1.0',
@@ -65,10 +73,16 @@ const MagicNumberOneIntentHandler = {
     attributes.num = 0;
     const speechText = 'Step 1. Think of a whole number 1 through 10., Step 2. Double it!, Step 3. Add 4., Step 4. Divide by 2., Step 5. Subtract the original number., When you are done, say Done.';
 
+    if (!supportsAPL(handlerInput)) {
+      return handlerInput.responseBuilder
+        .speak(speechText)
+        .reprompt(speechText)
+        .getResponse();
+    }
+    
     return handlerInput.responseBuilder
       .speak(speechText)
       .reprompt(speechText)
-      .withSimpleCard('Hello World', speechText)
       .addDirective({
         type: 'Alexa.Presentation.APL.RenderDocument',
         version: '1.0',
@@ -89,10 +103,16 @@ const MagicNumberTwoIntentHandler = {
     attributes.num = 1;
     const speechText = 'Step 1. Choose a number, any number!, Step 2. Multiply the number by 100., Step 3. Subtract the original number from the answer., Step 4. Add the digits in your answer., When you are done, say Done.';
 
+    if (!supportsAPL(handlerInput)) {
+      return handlerInput.responseBuilder
+        .speak(speechText)
+        .reprompt(speechText)
+        .getResponse();
+    }
+    
     return handlerInput.responseBuilder
       .speak(speechText)
       .reprompt(speechText)
-      .withSimpleCard('Hello World', speechText)
       .addDirective({
         type: 'Alexa.Presentation.APL.RenderDocument',
         version: '1.0',
@@ -117,10 +137,16 @@ const DoneIntentHandler = {
       speechText = 'Did you get the number 18?';
     }
 
+    if (!supportsAPL(handlerInput)) {
+      return handlerInput.responseBuilder
+        .speak(speechText)
+        .reprompt(speechText)
+        .getResponse();
+    }
+    
     return handlerInput.responseBuilder
       .speak(speechText)
       .reprompt(speechText)
-      .withSimpleCard('Hello World', speechText)
       .addDirective({
         type: 'Alexa.Presentation.APL.RenderDocument',
         version: '1.0',
@@ -168,12 +194,20 @@ const HelpIntentHandler = {
       && handlerInput.requestEnvelope.request.intent.name === 'AMAZON.HelpIntent';
   },
   handle(handlerInput) {
-    const speechText = 'You can say magic number one or magic number two to see the magic of numbers.';
+    const speechText = 'You can say Magic Number One or Magic Number Two to see the magic of numbers.';
 
+    if (!supportsAPL(handlerInput)) {
+      return handlerInput.responseBuilder
+        .speak(speechText)
+        .reprompt(speechText)
+        .withSimpleCard('Magic Numbers', speechText)
+        .getResponse();
+    }
+    
     return handlerInput.responseBuilder
       .speak(speechText)
       .reprompt(speechText)
-      .withSimpleCard('Hello World', speechText)
+      .withSimpleCard('Magic Numbers', speechText)
       .addDirective({
         type: 'Alexa.Presentation.APL.RenderDocument',
         version: '1.0',
@@ -224,9 +258,14 @@ const CancelAndStopIntentHandler = {
   handle(handlerInput) {
     const speechText = 'Goodbye!';
 
+    if (!supportsAPL(handlerInput)) {
+      return handlerInput.responseBuilder
+        .speak(speechText)
+        .getResponse();
+    }
+    
     return handlerInput.responseBuilder
       .speak(speechText)
-      .withSimpleCard('Hello World', speechText)
       .addDirective({
         type: 'Alexa.Presentation.APL.RenderDocument',
         version: '1.0',
@@ -276,9 +315,16 @@ const YesIntentHandler = {
   handle(handlerInput) {
     const speechText = 'That is the magic of maths and numbers!';
 
+    if (!supportsAPL(handlerInput)) {
+      return handlerInput.responseBuilder
+        .speak(speechText)
+        .withSimpleCard('Magic Numbers', speechText)
+        .getResponse();
+    }
+    
     return handlerInput.responseBuilder
       .speak(speechText)
-      .withSimpleCard('Hello World', speechText)
+      .withSimpleCard('Magic Numbers', speechText)
       .addDirective({
         type: 'Alexa.Presentation.APL.RenderDocument',
         version: '1.0',
@@ -328,9 +374,14 @@ const NoIntentHandler = {
   handle(handlerInput) {
     const speechText = 'Please try again!';
 
+    if (!supportsAPL(handlerInput)) {
+      return handlerInput.responseBuilder
+        .speak(speechText)
+        .getResponse();
+    }
+    
     return handlerInput.responseBuilder
       .speak(speechText)
-      .withSimpleCard('Hello World', speechText)
       .addDirective({
         type: 'Alexa.Presentation.APL.RenderDocument',
         version: '1.0',
@@ -396,6 +447,12 @@ const ErrorHandler = {
       .getResponse();
   },
 };
+
+function supportsAPL(handlerInput) {
+  const supportedInterfaces = handlerInput.requestEnvelope.context.System.device.supportedInterfaces;
+  const aplInterface = supportedInterfaces['Alexa.Presentation.APL'];
+  return aplInterface != null && aplInterface != undefined;
+}
 
 const skillBuilder = Alexa.SkillBuilders.custom();
 
